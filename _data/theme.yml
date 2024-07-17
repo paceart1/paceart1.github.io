@@ -38,6 +38,8 @@ t:
   cv_skills: "Skills"
   cv_volunteer: "Volunteer"
   cv_work: "Work"
+  personal_projects: "Personal Projects"
+  teaching_projects: "Teaching Projects"
 
 # Google Fonts
 google_fonts:
@@ -51,3 +53,4 @@ google_fonts:
 navigation_pages:
   - about.md
   - cv.md
+
