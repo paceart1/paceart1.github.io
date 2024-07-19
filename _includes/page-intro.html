@@ -12,6 +12,16 @@
       {% if page.sub_title %}
         <p class="intro-subtitle">{{ page.sub_title | markdownify | strip_html }}</p>
       {% endif %}
+      
+      
+      {% if page.actions %}
+        <ul class="intro-actions">
+          {% for action in page.actions %}
+            <li><a href="{{ action.url }}">{% if action.icon %}<span class="icon icon--{{action.label}}">{% include {{ action.icon | prepend: 'icon-' | append: '.svg' }} %}</span>{% endif %}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
 
       {% if page.date %}
         {% include author %}
@@ -26,6 +36,7 @@
         </div>
       {% endif %}
 
+      <!--
       {% if page.actions %}
         <ul class="intro-actions">
           {% for action in page.actions %}
@@ -33,6 +44,7 @@
           {% endfor %}
         </ul>
       {% endif %}
+      -->
     </div>
   </div>
 </header>

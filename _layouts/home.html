@@ -8,17 +8,38 @@ layout: default
   <div class="index inner">
     <div>{{ content }}</div>
     
+    <div>
+      <!--
+      <header class="section-title">
+        <h1>Personal Projects</h1>
+      </header>
+      <div class="entries-{{ page.entries_layout | default: 'list' }}"></div>
+        {% for project in site.projects_personal %}
+        <h3> {{ project.title }} </h3>
+        <p>{{ project.description }}</p>
+        {% endfor %}
+      </div>
+      -->
+      <header class="section-title">
+        <h1>Teaching Projects</h1>
+      </header>
+      <div class="entries-{{ page.entries_layout | default: 'list' }}"></div>
+        {% for project in site.projects_teaching %}
+        <h3> {{ project.title }} </h3>
+        <p>{{ project.description }}</p>
+        <a href="{{ project.link }}">Project Link</a>
+        {% endfor %}
+      </div>
+     
+    <!--
     {% if site.posts.size > 0 %}
       <div>
         <header class="section-title">
           <h2>{{ site.data.theme.t.personal_projects | default: 'Projects' }}{% if paginator.page > 1 %}{{ site.data.theme.t.page | default: 'Page' | prepend: ' - ' | append: ' ' }}{{ paginator.page }} {{ site.data.theme.t.of | default: 'of' }} {{ paginator.total_pages }}{% endif %}</h2>
         </header>
         <div class="entries-{{ page.entries_layout | default: 'list' }}">
-          {% if site.plugins contains 'jekyll-paginate' and page.paginate or site.gems contains 'jekyll-paginate' and page.paginate %}
-            {% comment %}
-              Add paginator.posts loop if jekyll-paginate plugin is enabled
-              and page.paginate == true
-            {% endcomment %}
+          {% if site.plugins contains 'jekyll-paginate' and page.paginate or site.gems contains 'jekyll-paginate' and page.paginate %} 
+            {% comment %}Add paginator.posts loop if jekyll-paginate plugin is enabled and page.paginate == true{% endcomment %}
             {% include posts-paginated.html %}
           {% else %}
             {% include posts-all.html %}
@@ -26,6 +47,7 @@ layout: default
         </div>
       </div>    
     {% endif %}
-    
+    -->
+
   </div>
 </main>
